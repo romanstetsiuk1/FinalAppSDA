@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 @Entity
 public class Event {
@@ -17,9 +17,9 @@ public class Event {
 
     private String location;
 
-    private DateTimeFormatter dateTimeStart;
+    private LocalDateTime dateTimeStart;
 
-    private DateTimeFormatter dateTimeEnd;
+    private LocalDateTime dateTimeEnd;
 
     public Integer getId_event() {
         return id_event;
@@ -45,19 +45,29 @@ public class Event {
         this.location = location;
     }
 
-    public DateTimeFormatter getDateTimeStart() {
+    public LocalDateTime getDateTimeStart() {
         return dateTimeStart;
     }
 
-    public void setDateTimeStart(DateTimeFormatter dateTimeStart) {
+    public void setDateTimeStart(LocalDateTime dateTimeStart) {
         this.dateTimeStart = dateTimeStart;
     }
 
-    public DateTimeFormatter getDateTimeEnd() {
+    public LocalDateTime getDateTimeEnd() {
         return dateTimeEnd;
     }
 
-    public void setDateTimeEnd(DateTimeFormatter dateTimeEnd) {
+    public void setDateTimeEnd(LocalDateTime dateTimeEnd) {
         this.dateTimeEnd = dateTimeEnd;
+    }
+
+    public Event(String theme, String location, LocalDateTime dateTimeStart, LocalDateTime dateTimeEnd) {
+        this.theme = theme;
+        this.location = location;
+        this.dateTimeStart = dateTimeStart;
+        this.dateTimeEnd = dateTimeEnd;
+    }
+
+    public Event() {
     }
 }
