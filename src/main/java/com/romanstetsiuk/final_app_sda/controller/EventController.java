@@ -20,12 +20,22 @@ public class EventController {
         return (List<Event>) eventRepository.findAll();
     }
 
-    @PostMapping
-    public Event addEvent(@RequestBody Event event) {
-        return eventRepository.save(event);
+//    @PostMapping
+//    public Event addEvent(@RequestBody Event event) {
+//        return eventRepository.save(event);
+//    }
+
+    @PostMapping("/addEvent")
+    String addFromForm (@RequestParam("theme") String theme,
+                        @RequestParam("location") String location,
+                        @RequestParam("date_time_start") String date_time_start,
+                        @RequestParam("date_time_end") String date_time_end,
+                        Event event) {
+         eventRepository.save(event);
+         return "events";
     }
 
-    @GetMapping(path = "/test")
+    @GetMapping(path = "/myEvents")
     String showEvents() {
         return "events";
     }
