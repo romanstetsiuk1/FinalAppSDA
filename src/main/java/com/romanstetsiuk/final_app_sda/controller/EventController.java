@@ -26,13 +26,13 @@ public class EventController {
 //    }
 
     @PostMapping("/addEvent")
-    String addFromForm (@RequestParam("theme") String theme,
-                        @RequestParam("location") String location,
-                        @RequestParam("date_time_start") String date_time_start,
-                        @RequestParam("date_time_end") String date_time_end,
-                        Event event) {
-         eventRepository.save(event);
-         return "events";
+    String addFromForm(@RequestParam("theme") String theme,
+                       @RequestParam("location") String location,
+                       @RequestParam("date_time_start") String date_time_start,
+                       @RequestParam("date_time_end") String date_time_end,
+                       Event event) {
+        eventRepository.save(event);
+        return "successAddEvent";
     }
 
     @GetMapping(path = "/myEvents")
