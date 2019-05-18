@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -28,8 +29,8 @@ public class EventController {
     @PostMapping("/addEvent")
     String addFromForm(@RequestParam("theme") String theme,
                        @RequestParam("location") String location,
-                       @RequestParam("date_time_start") String date_time_start,
-                       @RequestParam("date_time_end") String date_time_end,
+                       @RequestParam("date_time_start") LocalDateTime date_time_start,
+                       @RequestParam("date_time_end") LocalDateTime date_time_end,
                        Event event) {
         eventRepository.save(event);
         return "successAddEvent";
