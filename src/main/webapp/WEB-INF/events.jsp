@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<body>
 <form action="addEvent" method="post">
 
     <label>Temat:</label>
@@ -14,3 +19,5 @@
 
     <input type="submit" value="Dodaj">
 </form>
+</body>
+</html>
